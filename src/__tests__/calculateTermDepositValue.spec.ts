@@ -59,7 +59,7 @@ describe("calculateTermDepositValue", () => {
     };
 
     const result = calculateTermDepositValue(inputs);
-    expect(result).toBe(10000); // No interest, so it should be the same as the initial deposit
+    expect(result).toBe(10000);
   });
 
   it("should handle negative interest rates correctly", () => {

@@ -1,11 +1,10 @@
 import { prompt } from "enquirer";
-import { fromError } from "zod-validation-error";
 import {
   interestPaidScheduleLabels,
   interestPaidSchedules,
   termDepositInputSchema,
 } from "./schema";
-import { TermDepositInput } from "./types";
+import { fromError } from "zod-validation-error";
 
 export const cliDataCollector = async () => {
   await prompt({
@@ -43,11 +42,14 @@ export const cliDataCollector = async () => {
     },
   ]);
 
-  try {
-    return termDepositInputSchema.parse(termDepositInput) as TermDepositInput;
-  } catch (err) {
+  const { error, data } = termDepositInputSchema.safeParse(termDepositInput);
+
+  if (error) {
     console.error("The numbers you have given us dont make sense!:");
-    console.error(fromError(err).toString());
+    console.error(fromError(error).toString());
     console.error("\nPlease check these details and try again.");
+    return;
   }
+
+  return data;
 };
