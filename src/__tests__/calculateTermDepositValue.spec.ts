@@ -1,5 +1,5 @@
 import { calculateTermDepositValue } from "../calculateTermDepositValue";
-import { TermDepositInput } from "../types";
+import { TermDepositInput } from "../schema";
 
 describe("calculateTermDepositValue", () => {
   it("should calculate value correctly for annually interest payment", () => {

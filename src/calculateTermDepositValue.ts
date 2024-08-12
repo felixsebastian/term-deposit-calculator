@@ -1,4 +1,4 @@
-import { TermDepositInput } from "./types";
+import { TermDepositInput } from "./schema";
 
 export const calculateTermDepositValue = (inputs: TermDepositInput) => {
   // Compound interest equation taken from this website:

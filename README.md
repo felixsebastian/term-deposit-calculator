@@ -10,4 +10,4 @@ This is a small program with 3 functions. Because it's so small, you will not fi
 
 - calculateTermDepositValue
 - cliDataCollector
-- main function
+- main

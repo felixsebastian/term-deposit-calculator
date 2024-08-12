@@ -1,5 +1,7 @@
 import { z } from "zod";
-import { InterestPaidSchedule } from "./types";
+
+export type InterestPaidSchedule = (typeof interestPaidSchedules)[number];
+export type TermDepositInput = z.infer<typeof termDepositInputSchema>;
 
 export const interestPaidSchedules = [
   "monthly",
