@@ -11,7 +11,7 @@
     "build": "tsc",
     "clean": "rm -rf ./lib/",
     "lint": "eslint ./src/ --fix",
-    "start": "TS_NODE_FILES=true ts-node ./src/cli.ts",
+    "start": "TS_NODE_FILES=true ts-node ./src/main.ts",
     "test:watch": "jest --watch",
     "test": "jest",
     "typecheck": "tsc --noEmit"
@@ -38,8 +38,12 @@
     "codecov"
   ],
   "dependencies": {
+    "@types/lodash": "^4.17.7",
     "commander": "^7.2.0",
-    "enquirer": "^2.4.1"
+    "enquirer": "^2.4.1",
+    "lodash": "^4.17.21",
+    "zod": "^3.23.8",
+    "zod-validation-error": "^3.3.1"
   },
   "devDependencies": {
     "@types/jest": "^27.5.2",
